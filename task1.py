@@ -31,8 +31,9 @@ def binary_to_decimal(binary):
     # binary is a tuple of length 8
     # return value is an integer decimal
     decimal = 0
+    binary.reverse()
     for x in range(8):
-        if s[x].get() == 1:
+        if binary[x] == 1:
             decimal += 2**x 
     return decimal 
 
@@ -69,6 +70,7 @@ def get_decimal():
     binary = []
     for x in range(8):
         binary.append(s[x].get())
+    binary.reverse()
     decimal = binary_to_decimal(binary)
     entry.delete(0, tk.END)
     entry.insert(0, decimal)
