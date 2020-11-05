@@ -30,6 +30,7 @@ for x in range(8):
 def binary_to_decimal(binary):
     # binary is a tuple of length 8
     # return value is an integer decimal
+    binary = list(binary)
     decimal = 0
     binary.reverse()
     for x in range(8):
@@ -48,7 +49,7 @@ def decimal_to_binary(decimal):
             binary.append(1)
         else:
             binary.append(0)
-    return binary
+    return tuple(binary)
 
 def get_binary():
     # function should read the entry widget and generate an integer
@@ -56,6 +57,7 @@ def get_binary():
     # in the 8 checkboxes
     decimal = int(entry.get())
     binary = decimal_to_binary(decimal)
+    binary = list(binary)
     binary.reverse()
     for x in range(8):
         if binary[x] == 1:
