@@ -3,7 +3,7 @@
 import task1
 
 def test1():
-  test = task1.binary_to_decimal( (0,0,0,1,1,0,0,1) )
+  test = task1.binary_to_decimal( [0,0,0,1,1,0,0,1] )
   assert test == 25
 
 def test2():
